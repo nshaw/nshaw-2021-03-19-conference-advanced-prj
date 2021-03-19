@@ -10,7 +10,9 @@
   "entities": {
     "conference": {
       "id": "ID",
-      "name": "entità.conference.name"
+      "name": "entità.conference.name",
+      "location": "entità.conference.location",
+      "date": "entità.conference.date"
     }
   }
 }

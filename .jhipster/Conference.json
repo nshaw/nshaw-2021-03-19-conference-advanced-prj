@@ -1,11 +1,27 @@
 {
   "fluentMethods": true,
   "clientRootFolder": "conferenceAdvanced",
-  "relationships": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "session",
+      "otherEntityRelationshipName": "conference",
+      "relationshipName": "session"
+    }
+  ],
   "fields": [
     {
       "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "location",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "ZonedDateTime"
     }
   ],
   "changelogDate": "20210319155503",
@@ -17,5 +33,8 @@
   "readOnly": false,
   "jpaMetamodelFiltering": false,
   "pagination": "no",
-  "microserviceName": "conferenceAdvanced"
+  "microserviceName": "conferenceAdvanced",
+  "name": "Conference",
+  "embedded": false,
+  "applications": "*"
 }

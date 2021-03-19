@@ -26,7 +26,7 @@ const styles = () => ({
 const Filter = ({ filter, t, update, remove, filterId, classes }) => {
   const filterOperators = getFieldFilterTypes(filter.field);
 
-  const handleChange = (event) => {
+  const handleChange = event => {
     update(filterId, { [event.target.name]: event.target.value });
   };
 
@@ -49,6 +49,8 @@ const Filter = ({ filter, t, update, remove, filterId, classes }) => {
           >
             <option value="" />
             <option value="name">{t('entities.conference.name')}</option>
+            <option value="location">{t('entities.conference.location')}</option>
+            <option value="date">{t('entities.conference.date')}</option>
           </Select>
         </FormControl>
       </Grid>
@@ -65,7 +67,7 @@ const Filter = ({ filter, t, update, remove, filterId, classes }) => {
               onChange={handleChange}
             >
               <option value="" />
-              {filterOperators.map((operator) => {
+              {filterOperators.map(operator => {
                 if (typeof operator !== 'string') {
                   return (
                     <option key={operator.value} value={operator.value}>

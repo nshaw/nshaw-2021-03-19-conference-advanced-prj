@@ -1,0 +1,37 @@
+{
+  "name": "Session",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "track",
+      "fieldType": "Track",
+      "fieldValues": "BUSINESS,TECHNICAL",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "conference",
+      "otherEntityRelationshipName": "session",
+      "relationshipName": "conference",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210319184911",
+  "entityTableName": "session",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "conferenceAdvanced",
+  "applications": "*",
+  "microserviceName": "conferenceAdvanced"
+}

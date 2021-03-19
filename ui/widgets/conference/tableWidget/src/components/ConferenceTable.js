@@ -25,11 +25,17 @@ const styles = {
   },
 };
 
-const ConferenceTable = ({ items, onSelect, classes, t, Actions }) => {
-  const tableRows = items.map((item) => (
+const ConferenceTable = ({ items, onSelect, classes, t, i18n, Actions }) => {
+  const tableRows = items.map(item => (
     <TableRow hover className={classes.rowRoot} key={item.id} onClick={() => onSelect(item)}>
       <TableCell>
         <span>{item.name}</span>
+      </TableCell>
+      <TableCell>
+        <span>{item.location}</span>
+      </TableCell>
+      <TableCell>
+        <span>{new Date(item.date).toLocaleString(i18n.language)}</span>
       </TableCell>
       {Actions && (
         <TableCell>
@@ -45,6 +51,12 @@ const ConferenceTable = ({ items, onSelect, classes, t, Actions }) => {
         <TableRow>
           <TableCell>
             <span>{t('entities.conference.name')}</span>
+          </TableCell>
+          <TableCell>
+            <span>{t('entities.conference.location')}</span>
+          </TableCell>
+          <TableCell>
+            <span>{t('entities.conference.date')}</span>
           </TableCell>
           {Actions && <TableCell />}
         </TableRow>
@@ -65,6 +77,7 @@ ConferenceTable.propTypes = {
     noItems: PropTypes.string,
   }).isRequired,
   t: PropTypes.func.isRequired,
+  i18n: PropTypes.shape({ language: PropTypes.string }).isRequired,
   Actions: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 };
 

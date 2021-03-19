@@ -1,0 +1,59 @@
+application {
+  config {
+    applicationType microservice
+    authenticationType oauth2
+    baseName conferenceAdvanced
+    blueprints [generator-jhipster-entando]
+    buildTool maven
+    cacheProvider caffeine
+    clientPackageManager npm
+    creationTimestamp 1616169224225
+    databaseType sql
+    devDatabaseType h2Disk
+    dtoSuffix DTO
+    embeddableLaunchScript false
+    enableHibernateCache true
+    enableSwaggerCodegen false
+    enableTranslation true
+    jhiPrefix jhi
+    jhipsterVersion "6.9.0"
+    jwtSecretKey "YTk3YmFjYWM3Zjg5NDA0YWU3ZTNjN2I1OWNlODg0NTRhYTA5ZDlmYzYzNjhmMTdjMTg3MjdlNGYyMWQ2Nzg2OWViYWU5MTlhMDkzZTc0ZGZiNTYzZDUzZTI3YWFlNTc4MjRiY2YxOGQyNjI5ZDhhY2U0OGNmMGZmNmRhZTBjODA="
+    languages [en]
+    messageBroker false
+    nativeLanguage en
+    otherModules [[object Object]]
+    packageName com.entando.nshaw
+    prodDatabaseType postgresql
+    searchEngine false
+    serverPort 8081
+    serviceDiscoveryType eureka
+    skipClient true
+    skipUserManagement true
+    testFrameworks []
+    websocket false
+  }
+
+  entities *
+}
+
+entity Conference {
+  name String required
+  location String
+  date ZonedDateTime
+}
+
+entity Session {
+  name String required
+  track Track required
+}
+
+enum Track {
+  BUSINESS, TECHNICAL
+}
+
+relationship OneToMany {
+   Session to Conference
+}
+
+microservice Conference with conferenceAdvanced
+clientRootFolder Conference with conferenceAdvanced

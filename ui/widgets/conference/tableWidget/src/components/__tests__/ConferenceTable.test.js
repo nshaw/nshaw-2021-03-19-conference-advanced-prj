@@ -10,12 +10,12 @@ describe('ConferenceTable', () => {
     const { getByText } = render(<ConferenceTable items={conferenceMocks} />);
     expect(
       getByText(
-        'Similique magnam enim iste impedit assumenda nam quisquam blanditiis. Omnis molestias eos asperiores et sit fuga. Ex aut vel dignissimos eum voluptatem et est. Necessitatibus ea aut quia sint nesciunt. Eius rerum natus odio quae quos.'
+        'Architecto recusandae et quia. Ratione fuga magnam cum. Voluptatem est architecto qui et. Nesciunt sed earum velit voluptatem.'
       )
     ).toBeInTheDocument();
     expect(
       getByText(
-        'Asperiores et totam velit nobis esse reiciendis animi magnam. Itaque non nam quae rerum facilis debitis quia cum. Rem delectus vel similique nisi quae laboriosam dolor. Sunt sunt est perspiciatis quia. Commodi non est est dolores modi minus omnis earum.'
+        'Sed rem aut omnis. Nihil sapiente eveniet omnis consequatur necessitatibus molestiae et dignissimos. Atque non velit. Quidem non distinctio consequatur voluptas possimus alias qui odio. Nam architecto ullam dolorem ab ad aut. Dolore dolor et modi quia expedita.'
       )
     ).toBeInTheDocument();
   });
@@ -24,12 +24,12 @@ describe('ConferenceTable', () => {
     const { queryByText } = render(<ConferenceTable items={[]} />);
     expect(
       queryByText(
-        'Similique magnam enim iste impedit assumenda nam quisquam blanditiis. Omnis molestias eos asperiores et sit fuga. Ex aut vel dignissimos eum voluptatem et est. Necessitatibus ea aut quia sint nesciunt. Eius rerum natus odio quae quos.'
+        'Architecto recusandae et quia. Ratione fuga magnam cum. Voluptatem est architecto qui et. Nesciunt sed earum velit voluptatem.'
       )
     ).not.toBeInTheDocument();
     expect(
       queryByText(
-        'Asperiores et totam velit nobis esse reiciendis animi magnam. Itaque non nam quae rerum facilis debitis quia cum. Rem delectus vel similique nisi quae laboriosam dolor. Sunt sunt est perspiciatis quia. Commodi non est est dolores modi minus omnis earum.'
+        'Sed rem aut omnis. Nihil sapiente eveniet omnis consequatur necessitatibus molestiae et dignissimos. Atque non velit. Quidem non distinctio consequatur voluptas possimus alias qui odio. Nam architecto ullam dolorem ab ad aut. Dolore dolor et modi quia expedita.'
       )
     ).not.toBeInTheDocument();
 
@@ -43,7 +43,7 @@ describe('ConferenceTable', () => {
     );
     fireEvent.click(
       getByText(
-        'Similique magnam enim iste impedit assumenda nam quisquam blanditiis. Omnis molestias eos asperiores et sit fuga. Ex aut vel dignissimos eum voluptatem et est. Necessitatibus ea aut quia sint nesciunt. Eius rerum natus odio quae quos.'
+        'Architecto recusandae et quia. Ratione fuga magnam cum. Voluptatem est architecto qui et. Nesciunt sed earum velit voluptatem.'
       )
     );
     expect(onSelectMock).toHaveBeenCalledTimes(1);

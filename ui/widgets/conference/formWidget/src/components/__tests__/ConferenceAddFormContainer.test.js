@@ -10,7 +10,7 @@ jest.mock('api/conferences');
 jest.mock('@material-ui/pickers', () => {
   // eslint-disable-next-line react/prop-types
   const MockPicker = ({ id, value, name, label, onChange }) => {
-    const handleChange = (event) => onChange(event.currentTarget.value);
+    const handleChange = event => onChange(event.currentTarget.value);
     return (
       <span>
         <label htmlFor={id}>{label}</label>
@@ -26,8 +26,8 @@ jest.mock('@material-ui/pickers', () => {
 });
 
 jest.mock('auth/withKeycloak', () => {
-  const withKeycloak = (Component) => {
-    return (props) => (
+  const withKeycloak = Component => {
+    return props => (
       <Component
         {...props} // eslint-disable-line react/jsx-props-no-spreading
         keycloak={{
@@ -53,7 +53,7 @@ describe('ConferenceAddFormContainer', () => {
   const onCreateMock = jest.fn();
 
   it('saves data', async () => {
-    apiConferencePost.mockImplementation((data) => Promise.resolve(data));
+    apiConferencePost.mockImplementation(data => Promise.resolve(data));
 
     const { findByTestId, findByLabelText, queryByText, rerender } = render(
       <ConferenceAddFormContainer onError={onErrorMock} onUpdate={onCreateMock} />
@@ -61,6 +61,10 @@ describe('ConferenceAddFormContainer', () => {
 
     const nameField = await findByLabelText('entities.conference.name');
     fireEvent.change(nameField, { target: { value: conferenceMock.name } });
+    const locationField = await findByLabelText('entities.conference.location');
+    fireEvent.change(locationField, { target: { value: conferenceMock.location } });
+    const dateField = await findByLabelText('entities.conference.date');
+    fireEvent.change(dateField, { target: { value: conferenceMock.date } });
     rerender(<ConferenceAddFormContainer onError={onErrorMock} onUpdate={onCreateMock} />);
 
     const saveButton = await findByTestId('submit-btn');
@@ -87,6 +91,10 @@ describe('ConferenceAddFormContainer', () => {
 
     const nameField = await findByLabelText('entities.conference.name');
     fireEvent.change(nameField, { target: { value: conferenceMock.name } });
+    const locationField = await findByLabelText('entities.conference.location');
+    fireEvent.change(locationField, { target: { value: conferenceMock.location } });
+    const dateField = await findByLabelText('entities.conference.date');
+    fireEvent.change(dateField, { target: { value: conferenceMock.date } });
     rerender(<ConferenceAddFormContainer onError={onErrorMock} onUpdate={onCreateMock} />);
 
     const saveButton = await findByTestId('submit-btn');

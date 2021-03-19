@@ -2,12 +2,18 @@ const conferenceMocks = [
   {
     id: 0,
     name:
-      'Similique magnam enim iste impedit assumenda nam quisquam blanditiis. Omnis molestias eos asperiores et sit fuga. Ex aut vel dignissimos eum voluptatem et est. Necessitatibus ea aut quia sint nesciunt. Eius rerum natus odio quae quos.',
+      'Architecto recusandae et quia. Ratione fuga magnam cum. Voluptatem est architecto qui et. Nesciunt sed earum velit voluptatem.',
+    location:
+      'Aut et necessitatibus. Incidunt et et deleniti voluptas. Sed ipsa ad dolores cumque. Assumenda atque similique nemo odio fugiat laboriosam.',
+    date: '2011-02-13T09:13:36-05:00',
   },
   {
     id: 1,
     name:
-      'Asperiores et totam velit nobis esse reiciendis animi magnam. Itaque non nam quae rerum facilis debitis quia cum. Rem delectus vel similique nisi quae laboriosam dolor. Sunt sunt est perspiciatis quia. Commodi non est est dolores modi minus omnis earum.',
+      'Sed rem aut omnis. Nihil sapiente eveniet omnis consequatur necessitatibus molestiae et dignissimos. Atque non velit. Quidem non distinctio consequatur voluptas possimus alias qui odio. Nam architecto ullam dolorem ab ad aut. Dolore dolor et modi quia expedita.',
+    location:
+      'Voluptatem et voluptatem quo facere eum quo laudantium. Sunt est consequuntur. Autem quos voluptate.',
+    date: '2009-03-04T05:30:13-05:00',
   },
 ];
 

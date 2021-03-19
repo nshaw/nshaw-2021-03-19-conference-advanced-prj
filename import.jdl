@@ -1,0 +1,18 @@
+entity Conference {
+  name String required
+  location String
+  date ZonedDateTime
+}
+
+entity Session {
+  name String required
+  track Track required
+}
+
+enum Track {
+  BUSINESS, TECHNICAL
+}
+
+relationship OneToMany {
+   Conference to Session
+}
