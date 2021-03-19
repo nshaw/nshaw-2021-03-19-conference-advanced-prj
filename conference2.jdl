@@ -1,0 +1,27 @@
+application {
+  config {
+    baseName conference,
+    applicationType microservice,
+    packageName com.test
+  }
+  entities *
+}
+
+entity Conference {
+  name String required
+  location String
+  date ZonedDateTime
+}
+
+entity Session {
+  name String required
+  track Track required
+}
+
+enum Track {
+  BUSINESS, TECHNICAL
+}
+
+relationship OneToMany {
+   Session to Conference
+}
